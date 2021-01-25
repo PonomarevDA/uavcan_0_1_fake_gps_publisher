@@ -1,0 +1,6 @@
+# pyuavcan v0.1
+pyserial
+uavcan
+
+# common
+coloredlogs
