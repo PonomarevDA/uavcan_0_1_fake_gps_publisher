@@ -12,7 +12,7 @@ import uavcan
 import can
 import queue
 
-DEV_PATH = "/dev/ttyACM0"
+DEV_PATH = "/dev/ttyACM1"
 CAN_DEVICE_TYPE = "serial"
 
 class UavcanCommunicatorV0:
@@ -114,6 +114,11 @@ class UavcanCommunicatorV0:
 
 if __name__=="__main__":
     coloredlogs.install()
+
+    # Init dev path using arguments
+    if len(sys.argv) == 2:
+        DEV_PATH = sys.argv[1]
+
     # Init communicator
     communicator = None
     while communicator is None:
